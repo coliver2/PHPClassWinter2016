@@ -5,8 +5,8 @@
         <label>By column</label>
 <select name="column">
             <option value="id">ID</option>
-            <option value="corpname">Corporation Name</option>
-            <option value="incdate">Inc. Date</option>
+            <option value="corp">Corporation Name</option>
+            <option value="incorp_dt">Inc. Date</option>
             <option value="email">E-Mail</option>
             <option value="zipcode">Zipcode</option>
             <option value="owner">Owner</option>

@@ -29,19 +29,18 @@ function searchCorps($column, $search){
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     return $results;
+   
 }
 
-function sortCorps($bysort, $column2){
+function sortCorps( $column2, $bysort){
     $db = getDatabase();
     
-    $stmt = $db->prepare("SELECT * FROM corps ORDER BY $bysort $column2");
+    $stmt = $db->prepare("SELECT * FROM corps ORDER BY  $column2 $bysort");
     
     $column2 = '%' .$column2. '%';
-    $shin = array(
-        ":column2" => $column2
-            );
+    
     $results = array();
-    if ($stmt->execute($shin) && $stmt->rowCount() > 0) {
+    if ($stmt->execute() && $stmt->rowCount() > 0) {
         $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     return $results;
