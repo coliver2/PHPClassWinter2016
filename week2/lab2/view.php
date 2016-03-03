@@ -70,7 +70,11 @@
                     <td><?php echo $row['height']; ?></td>
                 </tr>
             <?php endforeach; ?>
+                            
         </table>
+        
+        <br/>  
+              <a href="add.php"> Add Page </a>
 
     </body>
 </html>

@@ -56,6 +56,8 @@
 
             <input type="submit" value="Submit" />
         </form>
+        <br/>
+        <a href="view.php"> View Page</a>
     </body>
 </html>
 
