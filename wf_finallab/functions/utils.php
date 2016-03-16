@@ -19,6 +19,34 @@ function getAllAddresses() {
     return $results;
     
 }
+
+function createNewAdd($fullname, $email, $address, $phone, $website, $birthday, $image) {
+
+    $db = dbconnect();
+
+
+//        should insert into database table but doesn't work
+    $stmt = $db->prepare("INSERT INTO address SET address_id = :address_id, user_id = :user_id, fullname = :fullname, email = :email, address = :address,
+                phone = :phone, website = :website, birthday = :birthday, image = :image");
+
+
+
+    $binds = array(
+        ":fullname" => $fullname,
+        ":email" => $email,
+        ":address" => $address,
+        ":phone" => $phone,
+        ":website" => $website,
+        ":birthday" => $birthday,
+        ":image" => $image,
+    );
+
+    if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
+        return true;
+    }
+    return false;
+}
+
 //check session
 function isLoggedIn() {
     
