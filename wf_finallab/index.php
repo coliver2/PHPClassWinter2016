@@ -33,6 +33,9 @@
             
             if (isValidUser($email, $password)) {
                     include './includes/admin-links.html.php';
+                }else if (!isValidUser($email, $password)){
+                    $errors = 'Not a valid user';
+                    echo $errors;
                 }
                 
         }

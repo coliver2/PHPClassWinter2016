@@ -4,5 +4,6 @@
     Password : <input name="pass" type="password" value="" />
     <br />
     <input type="submit" value="submit" />
+    <br/>
     <a href="createacctform.php">Create New Account</a>
 </form>

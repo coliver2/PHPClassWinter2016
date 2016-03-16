@@ -25,15 +25,15 @@ function isValidUser( $email, $pass ) {
     
 }
 
-function createNewAcct($email, $pass) {
+function createNewAcct($emailNew, $passNew) {
     
     $db = dbconnect();
     $stmt = $db->prepare("INSERT INTO users SET :user_id = user_id");
-    $pass = sha1($pass);
+    $passNew = sha1($passNew);
     
     $binds = array(
-        ":email" => $email,
-        ":password" => $pass
+        ":email" => $emailNew,
+        ":password" => $passNew
     );
 
     if ($stmt->execute($binds) && $stmt->rowCount() > 0) {
